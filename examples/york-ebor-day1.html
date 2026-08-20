@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>YORK · Ebor Festival · Wed 19 Aug 2026</title>
+<style>
+:root{
+  --bg:#0b0d10;--panel:#12151b;--panel2:#171b22;--hair:rgba(255,255,255,.08);
+  --ink:#e8eaee;--dim:#8b93a1;--gold:#d7b56d;--grass:#2e8f5b;--nap:#e4574f;
+  --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,sans-serif;padding-bottom:60px}
+header{padding:26px 16px 14px;border-bottom:1px solid var(--hair);background:radial-gradient(120% 90% at 50% -20%, rgba(46,143,91,.14), transparent 60%)}
+.kicker{font-size:11px;letter-spacing:.28em;color:var(--gold);text-transform:uppercase}
+h1{font-size:34px;font-weight:200;letter-spacing:.14em;margin:4px 0 2px}
+.sub{color:var(--dim);font-size:13px}
+.going{display:inline-flex;gap:8px;align-items:center;margin-top:10px;padding:5px 10px;border:1px solid var(--hair);border-radius:99px;font-size:12px;color:var(--dim)}
+.going b{color:var(--grass);font-weight:600}
+nav{position:sticky;top:0;z-index:9;display:flex;gap:6px;overflow-x:auto;padding:10px 12px;background:rgba(11,13,16,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair);scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav button{flex:0 0 auto;background:var(--panel);border:1px solid var(--hair);color:var(--dim);border-radius:8px;padding:8px 12px;font:inherit;font-size:13px;cursor:pointer}
+nav button.on{color:#0b0d10;background:var(--gold);border-color:var(--gold);font-weight:600}
+nav button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.race{display:none;padding:14px 12px 30px}
+.race.on{display:block}
+.rhead{padding:14px;border:1px solid var(--hair);border-radius:12px;background:var(--panel);margin-bottom:12px}
+.rtime{font-family:var(--mono);font-size:26px;color:var(--gold)}
+.rname{font-size:15px;font-weight:600;margin:2px 0}
+.rmeta{color:var(--dim);font-size:12.5px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chip{font-size:11px;padding:4px 9px;border-radius:99px;border:1px solid var(--hair);color:var(--dim)}
+.chip b{color:var(--ink);font-weight:600}
+.chip.draw b{color:var(--gold)}
+.verdict{margin-top:10px;padding:10px 12px;border-left:2px solid var(--grass);background:var(--panel2);border-radius:0 8px 8px 0;font-size:13px;color:var(--dim)}
+.verdict b{color:var(--ink)}
+.bf{margin-top:12px;padding:12px 14px;border:1px solid var(--hair);border-radius:12px;background:var(--panel);font-size:12px;line-height:1.7;color:var(--dim)}
+.bf .lbl{font-size:10px;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px}
+.bf b{color:var(--ink);font-weight:600}
+.bf i{font-family:var(--mono);font-style:normal;color:var(--gold)}
+details.trends{margin-top:8px}
+details.trends summary{cursor:pointer;font-size:12px;color:var(--gold);list-style:none;padding:6px 0}
+details.trends summary::before{content:"▸ "}
+details.trends[open] summary::before{content:"▾ "}
+details.trends .tbody{font-size:12.5px;color:var(--dim);padding:4px 0 2px;line-height:1.7}
+.runner{border:1px solid var(--hair);border-radius:10px;background:var(--panel);margin-bottom:7px}
+.rtop{display:grid;grid-template-columns:40px 1fr auto;gap:0 10px;align-items:center;padding:10px 10px;cursor:pointer}
+.cloth.won{border-color:var(--gold);box-shadow:0 0 0 1.5px var(--gold);background:rgba(215,181,109,.14)}
+.cloth.won .n{color:var(--gold)}
+.claim{font-family:var(--mono);font-size:10px;color:var(--gold);margin-left:3px}
+.rankdet{font-family:var(--mono);font-size:9.5px;color:var(--dim);margin-top:2px}
+.consb{font-family:var(--mono);font-size:11px;color:var(--dim)}
+.consb.c2{color:var(--fg)}
+.consb.c3{color:var(--gold)}
+.consb.c4{color:var(--gold);font-weight:700}
+.betainfo{font-family:var(--mono);font-size:11px;color:var(--gold);margin:-4px 0 8px;display:none}
+.betainfo.show{display:block}
+.cloth{width:34px;height:34px;border-radius:8px;background:var(--panel2);border:1px solid var(--hair);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.cloth .n{font-family:var(--mono);font-size:15px}
+.cloth .d{font-size:9px;color:var(--dim);margin-top:2px}
+.hname{font-weight:600;font-size:14.5px;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.form{font-family:var(--mono);font-size:10px;color:var(--dim);font-weight:400}
+.tag{font-size:9px;letter-spacing:.08em;padding:2px 6px;border-radius:4px;font-weight:700}
+.tag.nap{background:var(--nap);color:#fff}
+.tag.rp{background:var(--gold);color:#0b0d10}
+.tag.pd{border:1px solid var(--gold);color:var(--gold)}
+.jt{color:var(--dim);font-size:12px;margin-top:1px}
+.figs{font-family:var(--mono);font-size:10.5px;color:var(--dim);margin-top:2px}
+.figs b{color:var(--ink);font-weight:600}
+.figs .spk{vertical-align:-3px;margin-left:4px}
+.figs .wr{color:var(--gold)}
+.tr{font-style:normal;font-size:9px;margin-left:2px}
+.tr.up{color:var(--grass)}.tr.dn{color:var(--nap)}.tr.fl{color:var(--dim)}
+.seq{font-family:var(--mono);font-size:11px;color:var(--dim);margin-bottom:7px}
+.seq b{color:var(--ink);font-weight:600}
+.right{text-align:right}
+.wt{font-family:var(--mono);font-size:13px}
+.fc{font-family:var(--mono);font-size:12px;color:var(--gold);margin-top:2px}
+.fc.long{color:var(--dim)}
+.modelbar{display:flex;gap:5px;align-items:center;overflow-x:auto;margin:0 0 8px;scrollbar-width:none}
+.modelbar::-webkit-scrollbar{display:none}
+.modelbar span{font-size:10px;letter-spacing:.12em;color:var(--dim);text-transform:uppercase;flex:0 0 auto}
+.modelbar button{flex:0 0 auto;background:var(--panel);border:1px solid var(--hair);color:var(--dim);border-radius:99px;padding:5px 11px;font:inherit;font-size:12px;cursor:pointer}
+.modelbar button.on{color:#0b0d10;background:var(--grass);border-color:var(--grass);font-weight:600}
+.runner.painted{border-left:3px solid var(--pc,var(--hair))}
+.mscore{font-family:var(--mono);font-size:11px;font-weight:700;color:#0b0d10;background:var(--pc);border-radius:5px;padding:2px 6px;margin-top:3px;display:inline-block}
+.sortbar{display:flex;gap:5px;align-items:center;overflow-x:auto;margin:0 0 10px;scrollbar-width:none}
+.sortbar::-webkit-scrollbar{display:none}
+.sortbar span{font-size:10px;letter-spacing:.12em;color:var(--dim);text-transform:uppercase;flex:0 0 auto}
+.sortbar button{flex:0 0 auto;background:var(--panel);border:1px solid var(--hair);color:var(--dim);border-radius:99px;padding:5px 11px;font:inherit;font-size:12px;cursor:pointer}
+.sortbar button.on{color:#0b0d10;background:var(--gold);border-color:var(--gold);font-weight:600}
+.pdrow{display:flex;gap:3px;flex-wrap:wrap;padding:0 10px 9px 60px}
+.pdc{display:inline-flex;flex-direction:column;align-items:center;min-width:30px;padding:3px 4px;border:1px solid var(--hair);border-radius:6px;font-size:11px;color:var(--ink);line-height:1.3}
+.pdc em{font-style:normal;font-size:8px;letter-spacing:.06em;color:var(--dim);text-transform:uppercase}
+.pdc.grp{justify-content:center;color:var(--gold);border-color:var(--gold);font-weight:700;font-size:10px}
+.spot{display:none;padding:0 12px 11px 60px;margin-top:-2px;font-size:12.5px;color:var(--dim);line-height:1.55}
+.runner.open .spot{display:block}
+.card{padding:14px;border:1px solid var(--hair);border-radius:12px;background:var(--panel);margin-bottom:12px}
+.card h2{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px}
+.card p{font-size:13px;color:var(--dim);margin-bottom:8px}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th{text-align:left;color:var(--dim);font-weight:500;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:6px 6px;border-bottom:1px solid var(--hair)}
+td{padding:7px 6px;border-bottom:1px solid var(--hair)}
+td.num{font-family:var(--mono);text-align:right}
+td.pos{color:var(--grass)}
+td.neg{color:var(--dim)}
+footer{padding:18px 16px;color:#4b515c;font-size:11px;text-align:center}
+@media(min-width:760px){.grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;align-items:start}.runner{margin-bottom:0}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="kicker">Ebor Festival · Day 1</div>
+  <h1>YORK</h1>
+  <div class="sub">Wednesday 19 August 2026 · Knavesmire</div>
+  <div class="going">Going <b>GOOD</b><span>·</span>GoingStick 5.8<span>·</span>Rails innermost</div>
+</header>
+
+<nav id="nav"></nav>
+<main id="main"></main>
+
+<footer>Compiled from Racing Post pages 46–52, 19 Aug 2026 (cards, Topspeed/RPR, spotlight notes paraphrased, Postdata suitability ticks, trends, draw, trainers, travellers). Prices are morning betting forecast, not live. Tap a runner for its note.</footer>
+
+<script>
+// runner: [no, draw, form, horse, jockey, trainer, weight, forecast, TS, RPR, note]
+const RACES=[
+{t:"1.50",n:"Hong Kong JC World Pool Handicap (Heritage)",m:"Class 2 · 5f 89y · £69,579 · 22 run · ITV",draw:"Slight low",pd:"Corolla Point",rp:"Air Force One",nap:"Toca Madera",
+v:"<b>Toca Madera</b> (nap) preferred after a fine Stewards' Cup run; The Man and Air Force One the dangers, Corolla Point and Spartan Arrow next best.",
+tr:"10yr: oldest winner 9yo, 5yo+ took 7 of 10 · Won LTO: 4 winners from 28 qualifiers · Placed LTO: 3 from 37 · Winning OR range 88–105 · Winners have come from across the track this year but the pull is to the far side in big fields.",
+r:[
+["1","17","0712010","Dubai Bling","Oisin Murphy","Hugo Palmer","9-12","18","91","113","Bahrain and Ascot wins this summer; stiff task under a penalty in the Stewards' Cup, ran respectably. Trip fine, high draw the question.","✓ ✓ ? ? – ✓✓ ✓✓","104","91 89 98 102 101 107"],
+["2","16","2P28312","Stratusnine","James Doyle","Hugo Palmer","9-12","11","94","111","Clicked this summer after a run of misfortune, then went down blazing in the Stewards' Cup. 3lb higher — may be near his ceiling.","✓ ✓ ? ✓ – ✓✓ ✓✓","104","92 92 95 95 95 101"],
+["3","1","824-530","West Acre","Darragh Keenan","George Scott","9-10","33","79","109","Two Group efforts in Dubai show the ability, but slow starts have crept in — risky proposition now.","✓ ✓ ? ? – ✓✓ ✗","102","105 104"],
+["4","13","7102120","Dark Thirty","Jason Hart","J & S Quinn","9-8","18","100","108","Back to his best with 6f wins at Chester and the Curragh; weakened late in the Stewards' Cup. This is the shortest trip he's tried.","✓ ✓ ? ✓✓ – ✓✓ ✓✓","100","87 93 93 93 97 96"],
+["5","9","11-3321","Corolla Point","Callum Rodriguez","Edward Bethell","9-8","11-2","94","111","Two 5f handicap wins last Sept after joining this yard; unlucky first time this season and only 3lb higher — the third has won since. Potential remains.","✓✓ ✓ ✓ ✓ – ✓✓ ✓✓","100","81 88 94 94 94 97"],
+["6","1","19-3136","Lexington Blitz","Edward Greatrex","Robert Cowell","9-6","8","92","114","Better than ever since gelding, won at Epsom and Goodwood in May/June; running with a 5lb rise but could find one or two ahead of him on the book.","✓ ✓ ? ? ✓ ✓✓ ✓✓","98","83 88 88 88 97 98"],
+["7","2","0416-00","Candy","George Wood","Richard Spencer","9-5","40","–","109","5lb below last season's Ayr Silver Cup win but no luck this year — stalls trouble and a slipped saddle. Today's test may be insufficient evidence either way.","✓ ✓ ? ? ✓ ✓✓ ✗","97","95 92 92 – 98 97"],
+["8","18","630-300","Against The Wind","Kevin Stott","Kevin Ryan","9-5","40","62","114","Strong 3yo form and a good Southwell third in March, but two heavy defeats since. Arrives with a point to prove.","✓ ? ? ✓ – ✓✓ ?","97","93 102 102 101 101 100"],
+["9","4","0316045","Toca Madera","Daniel Tudhope","David O'Meara","9-4","6","93","112","Credit in all three York runs; would have gone very close in the Stewards' Cup with a clear run at a crucial stage. Same mark, big chance.","✓ ✓ ? ✓ ✓ ✓✓ ✓✓","96","84 86 97 96 95 96"],
+["10","20","0-04001","Trefor","Kieran Shoemark","Charles Hills","9-4","12","91","111","Travelled powerfully to wear down The Man in this race 12 months ago; arrives 3lb higher after a penalised Windsor second. Stall 20 a positive if anything.","✓✓ ✓ ✓ ✓ – ✓✓ ✓✓","96","98 98 96 96 94 91"],
+["11","8","0033825","Erosandpsyche","Oisin Orr","D J Murphy (IRE)","9-3","33","95","111","Irish raider with solid runs in defeat this season; tough mark to overcome on what is effectively a fresh assignment.","✓ ✓ ? ? – ✓✓ ✓✓","95","98 96 – 95 94 95"],
+["12","12","36-1412","Naana's Sparkle","Kieran O'Neill","Lemos de Souza","9-3","10","95","111","On the up for the new yard — 5f wins at Yarmouth and Southwell then a fine Glorious Goodwood second, hitting the front late. 3lb rise a fair ask.","✓ ✓ ✓ ? – ✓✓ ✓✓","95","88 87 86 90 89 92"],
+["13","7","-788077","Spartan Arrow","Luke Morris","Archie Watson","9-2","25","96","111","Fine 2025 with Listed and Group 3 wins; nothing comparable in 2026 but far too able to write off completely.","✗ ✓ ✓ ✓ ✓ ✓✓ ✓","94","103 101 100 97"],
+["14","10","-111502","Gold Star Hero","Hector Crouch","Michael Bell","9-2","25","105","113","Three front-running AW wins in spring sent the mark soaring; ran right up to it in the Shergar Cup sprint at Ascot 11 days ago. Deeper race here.","✓ ✓ ✓ ? – ✓✓ ✓✓","94","79 83 88 96 96 94"],
+["15","21","5-56310","Toyotomi","Rossa Ryan","David O'Meara","9-2","33","100","111","Cashed in on a weights drop at Goodwood (6f, soft) in June; can win more off this mark but perhaps not in this one.","✓ ✓ ✓ ? – ✓✓ ✗","94","97 95 94 92 92 97"],
+["16","6","8293900","Apollo One","Colin Keane","Charalambous & Clutterbuck","8-13","16","98","111","Grand servant over the years and retains ability, but not at his best last month and the younger brigade may have his measure.","✗ ✓ ✓ ✓ ✓ ✓✓ ✓","91","98 97 97 94"],
+["17","15","-870311","Dapper Valley","Tom Marquand","Michael Keady","8-13","33","103","110","Revived by James Owen last autumn, won at Leicester and Salisbury in spring; 25,000gns purchase now on a tough mark for his stable debut.","✗ ✓ ✓ ? – ✓✓ ?","91","70 73 80 79 77 85"],
+["18","5","-510533","Air Force One","P J McDonald","Geoff Oldroyd","8-13","7","100","115","Third behind Trefor and The Man in this 12 months ago; consistent since, third of 21 to Stratusnine last time. Big run expected again.","? ✓ ✓ ✓ ✓ ✓✓ ✓✓","91","89 88 90 90 90 90"],
+["19","11","26-0450","Stormy Impact","Warren Fentiman(3)","R & P Fahey","8-11","33","102","112","0-4 this year but retains ability; slight worry she needs these conditions exactly, though they appeal today.","✓ ✓ ? ✓ – ✓✓ ✓✓","89","94 95 94 92 92 91"],
+["20","3","8-66600","The Man","David Egan","Richard Spencer","8-11","5","104","109","Won a 5f handicap at the Dante meeting and collared late by Trefor in this last year; 3lb lower now and this has been the main aim all summer.","✓ ✓ ✓ ✓ ✓ ✓✓ ✓","89","84 92 96 93 91"],
+["21","14","0707100","Ziggy's Triton","Silvestre de Sousa","David O'Meara","8-10","40","101","112","Course winner last month but all his winning is at Class 4 or below; likely vulnerable at this level.","✓ ✓ ? ✓ – ✓✓ ✓✓","88","91 89 87 86 89 88"],
+["22","22","1000607","Another Baar","Mikey Sheehy","Adrian Paul Keatley","8-10","50","87","110","Won a local Group 1 in Bahrain in January and got clobbered for it; drawn widest of all and others have more pressing claims.","✓ ✓ ✓ ✓ – ✓✓ ✓✓","88","93 92 98 95 95 91"]
+]},
+{t:"2.25",n:"Tattersalls Acomb Stakes (Group 3)",m:"Class 1 · 7f · £99,242 · 11 run · ITV",draw:"No strong bias",pd:"Haffner",rp:"Haffner",nap:"Haffner",
+v:"<b>Haffner</b> holds leading claims for O'Brien & Ryan Moore; Trean impressed at Galway, Gentle Hurricane third pick, Alfred Wallace respected.",
+tr:"10yr: last-time-out winners dominate — 10 wins from 65 LTO-winner qualifiers · Highest winning weight 9-3 · Winning card RPR 93–110 · Trainers here: Balding 2 wins, O'Brien 1; Keatley / Palmer / Burke placed only.",
+r:[
+["1","8","51051","Alfred Wallace","Kieran Shoemark","Ed Walker","9-3","6","98","114","Fifth in the Group 2 Superlative then improved under patient tactics for a Listed win at Ascot 13 days ago; dam a Group 1 winner. Respected.","✓ ✓ ✓ ? – ✓✓ ✓✓|G1","116",""],
+["2","9","1517","Big Cigar","Oisin Orr","R & P Fahey","9-3","50","84","100","Came clear with a subsequent winner when scoring last month, but seventh of ten in the Group 2 Richmond suggests more substance needed.","✓ ? ? ✓ – ✓✓ ✓","105","84"],
+["3","5","2318","Clash Of Hearts","Mikey Sheehy","Adrian Paul Keatley","9-3","100","82","94","Built on promising early starts to win at Pontefract; respectable in a big Goodwood nursery field but a chunk of improvement needed here.","✓ ✓ ? ✓ – ✓ ✓|G2","94","84"],
+["4","10","21633","Confucius","Wayne Lordan","A P O'Brien","9-3","11","103","109","Naas winner in May, close sixth in the Coventry, then Group thirds at the Curragh. Moore prefers stablemate Haffner but he's not ruled out.","✓✓ ✓ ? ? – ✓✓ ✓|G1","113",""],
+["5","1","51","Fuel The Jet","Neil Callan","Tom Clover","9-3","16","65","96","Well backed on debut, then improved for a head win at Newbury; unexposed, in-form yard, and the same connections' novices have kept progressing.","✓ ? ✓ ? – ✓✓ ✓|G2","–",""],
+["6","6","1","Gentle Hurricane","Oisin Murphy","Andrew Balding","9-3","6","48","85","105,000eur yearling backed into 4-1 for a winning Salisbury debut last month; big leap in grade but looks a good prospect for a yard flying with 2yos.","✓ ? ? ? – ✓ ✓|G1","–",""],
+["7","11","212","Haffner","Ryan Moore","A P O'Brien","9-3","7-4","94","116","Won at Newmarket (7f) last month after a close Vintage Stakes second at Glorious Goodwood; in excellent hands and holds leading claims.","✓✓ ✓ ✓ ? – ✓✓ ✓✓|G1","119",""],
+["8","2","102","Siouxperb","Hector Crouch","Archie Watson","9-3","50","53","91","Won at Yarmouth in April, bounced back from a heavy Royal Ascot defeat to go close at Newcastle; limitations look exposed at this level.","✗ ? ? ? – ✓ ✓|G2","100",""],
+["9","4","221","Stardom Glory","James Doyle","Hugo Palmer","9-3","12","91","98","Runner-up twice over 6f before keeping on strongly to win at Chester; needs another step up in grade but the yard's 2yos are useful.","✓ ✓ ? ✓ – ✓✓ ✓","100",""],
+["10","7","301","Trean","W J Lee","P Twomey (IRE)","9-3","7-2","84","101","Eye-catching third on debut, bounced back from a Curragh blip to win in fine style at Galway; highly regarded by his Irish yard, big part to play.","✓ ✓ ✓ ? – ✓✓ ✓|G1","–",""],
+["11","3","41","Vega King","Clifford Lee","K R Burke","9-3","16","91","95","Close fourth at Ayr then a narrow Beverley win; that form has been franked and he's from a powerful 2yo stable, but needs another step forward.","✓✓ ? ✓ ? – ✓✓ ✓|G1","103",""]
+]},
+{t:"3.00",n:"Sky Bet Great Voltigeur Stakes (Group 2)",m:"Class 1 · 1m 3f 188y · £141,775 · 6 run · ITV",draw:"n/a (round course)",pd:"Christmas Day",rp:"Pierre Bonnard",nap:"Pierre Bonnard",
+v:"<b>Pierre Bonnard</b> gets 5lb from Derby winner Christmas Day and can turn the tables; Maltese Cross keeps improving, Superior Choice interesting.",
+tr:"10yr: market leaders strong (mkt position 1 won 4 of 10) · Winning card RPR 120–134 · LTO winners only 2 from 20 · Trainers here: O'Brien 3 wins, Balding 0-1-2.",
+r:[
+["1","4","11-1312","Christmas Day","Ryan Moore","A P O'Brien","9-7","5-2","124","126","Galloped relentlessly to win the Derby from Maltese Cross, then ridden prominently when second in the Irish Derby. Won't go down without a fight.","✓✓ ✓ ✓ ✓ – ✓✓ ✓✓|G1","125",""],
+["2","6","21-1121","Maltese Cross","Tom Marquand","William Haggas","9-7","2","124","126","Only defeat this season was the Derby; snatched the Grand Prix de Paris from the fire after trouble. Every race has brought improvement.","✓ ✓ ✓ ? – ✓✓ ✓✓|G1","122",""],
+["3","3","80-4410","Antigua","Ronan Whelan","A P O'Brien","9-2","100","83","102","Twice made the running including a Fairyhouse maiden win; an inferior stablemate of two here — probable front-running duties.","✓✓ ✓ ✓ ? – ✓ ✗","99","89"],
+["4","1","4162","Galiyan","Oisin Murphy","Andrew Balding","9-2","12","108","123","Steady four-race improver — Royal Ascot Group 2 sixth then a close Newmarket Group 3 second — but nothing suggests a match for these at 1m4f.","✓ ✓ ✓ ? – ✓ ✓|G1","118",""],
+["5","2","11-7273","Pierre Bonnard","Wayne Lordan","A P O'Brien","9-2","3","128","131","Serious Derby prospect last term; excuses in the Epsom mud, then rallied to finish a neck behind Christmas Day in the Irish Derby. Gets 5lb — clear top on form.","✓✓ ✓ ✓ ? – ✓✓ ✓✓|G1","128",""],
+["6","5","4-111","Superior Choice","Shane Foley","J & T Gosden","9-2","11-2","83","123","1.1m gns yearling on a hat-trick after Newmarket and Hamilton (Listed) wins; exciting, but this is a stiff introduction to Group company.","✓✓ ✓ ? ? – ✓ ✓|G1","116",""]
+]},
+{t:"3.35",n:"Juddmonte International Stakes (Group 1)",m:"Class 1 · 1m 2f 56y · £850,650 · 9 run · ITV",draw:"Slight middle",pd:"Constitution River",rp:"Ombudsman",nap:"Ombudsman",
+v:"<b>Ombudsman</b> the one to beat off his Prince of Wales's form; Constitution River the fresh Eclipse-winning challenger, Item won two C&D Group 2s.",
+tr:"10yr: market position 1 won 8 of the last 10 · Oldest winner 5yo, 3yos took 3 of 10 · Winning card RPR 132–138 · Won LTO: 7 winners from 28 · Trainers here: Gosden 3 wins, O'Brien 2.",
+r:[
+["1","4","1233-14","Almaqam","Kieran Shoemark","Ed Walker","9-8","14","128","131","Career best to win the Tattersalls Gold Cup in May; beaten 7l by Ombudsman at Royal Ascot when the ground may have been too quick. Not ruled out each-way.","✓ ✓ ✓ ✓ – ✓ ?","128",""],
+["2","6","417-247","Devil's Advocate","Robert Havlin","J & T Gosden","9-8","200","75","119","Listed runner-up but was a pacemaker at Kempton in April; that's set to be his role again.","✓✓ ✓ ✓ ✓ – ✓ ?","115","104"],
+["3","1","212-111","Ombudsman","William Buick","J & T Gosden","9-8","6-5","120","139","Impressive in this last year and took his Group 1 tally to four with the Prince of Wales's at Royal Ascot; a new rival will need to be very special to beat him.","✓✓ ✓ ✓ ✓ – ✓✓ ?","138",""],
+["4","5","0014-82","Pride Of Arras","Rossa Ryan","Ralph Beckett","9-8","40","92","123","York brings out his best — Dante and Great Voltigeur wins — but may have inconvenienced himself making the running last time. Needs to find something back in a Group 1.","✓ ✓ ✓ ✓✓ – ✓ ✓","120",""],
+["5","9","2111-11","Zaydann","Mickael Barzalona","F-H Graffard","9-8","20","–","123","From the family of Zarkava; four-timer capped by a Group 3 at Vichy. Considerably hotter here but cost little to supplement and could have more to offer.","✓✓ ✓ ✓ ? – ✓ ✓","–",""],
+["6","8","2-42076","Action","Ronan Whelan","A P O'Brien","9-1","200","93","121","Runner-up to Item in the Dante over C&D but well beaten in Group 1s since; looks set for pacemaking duties once more.","✓✓ ✓ ✓ ✓ – ✓ ✗","117",""],
+["7","7","211-111","Constitution River","Ryan Moore","A P O'Brien","9-1","11-8","127","134","Group 1 wins in the Prix du Jockey Club and Eclipse (by 3l); 5-5 since debut and has never faced a rival as good as Ombudsman — but the potential is real.","✓✓ ✓ ✓ ? – ✓✓ ✓✓","130",""],
+["8","3","111-123","Hawk Mountain","Wayne Lordan","A P O'Brien","9-1","16","126","126","Futurity winner at Doncaster; Group 3 win and Jockey Club second in France, third in the Eclipse. Has to settle better than on his last two.","✓✓ ✓ ✓ ? – ✓ ✓","123",""],
+["9","2","11-191","Item","Colin Keane","Andrew Balding","9-1","15-2","98","129","Won the Group 2 Dante over C&D in May, bounced back from a soft-ground Derby flop to win the York Stakes over C&D last month. Entitled to respect.","✓ ✓ ✓ ✓✓ – ✓ ✓","128",""]
+]},
+{t:"4.10",n:"Sky Bet Stayers Handicap (Heritage)",m:"Class 2 · 2m 56y · £51,540 · 17 run · ITV",draw:"n/a (round course)",pd:"Ride The Thunder",rp:"Shrimp Shady",nap:"Small Fry",
+v:"<b>Small Fry</b> just shaded over Kirchner — both unlucky lately and ahead of their marks; Valedictory and Ride The Thunder next on the list.",
+tr:"10yr: 5yo+ took 6 of 10 (4yo 4), oldest winner 7yo · Weight sweet spot 9-0 to 9-6 · LTO winners underperform: 2 winners from 26 · Placed LTO 4 from 29.",
+r:[
+["1","16","1-15760","Duke Of Oxford","Hector Crouch","Michael Bell","9-12","66","43","109","Eight AW wins but tons to prove on turf (0-7); reportedly lame after losing a shoe when tailed off 19 days ago.","✓ ✓ ✓ ? – ✓✓ ✓","102","93 96 102 – – 102"],
+["2","9","-682157","Prydwen","Daniel Tudhope","George Scott","9-12","40","72","112","8yo whose 11th success came over 1m4f in April; also effective at 2m but has edged back up the weights and looks vulnerable.","✓ ✓ ✓ ? – ✓✓ ✓✓","102","102 101 99 96 98 103"],
+["3","5","34-7521","Kirchner","Ryan Moore","James Owen","9-7","9-2","86","108","Ex-French 4yo, second of 20 in the Northumberland Plate third start for the yard, then even better at Ascot; relatively unexposed and heading the right way.","✓ ✓ ✓ ? – ✓✓ ✓✓","97","92 89 89 91"],
+["4","10","1199-62","Small Fry","D B McMonagle","J P O'Brien (IRE)","9-6","5-2","101","108","Eye-catching at Royal Ascot, then a nightmare passage when second of 13 at Glorious Goodwood; a 4lb rise adds salt but he's the one to beat.","✓ ✓ ✓ ? – ✓✓ ✓✓","96","78 83 92 92 92 92"],
+["5","4","1-26115","Valedictory","William Buick","J & T Gosden","9-5","6","98","111","Cheekpieces brought wins at Goodwood and Newmarket; looked hard work at Glorious Goodwood and needs to iron things out on this first try at 2m.","✓✓ ✓ ? ? – ✓✓ ✓✓","95","84 87 87 92 95"],
+["6","15","1020-10","Mordor","Jamie Spencer","Gordon Elliott (IRE)","9-4","40","91","105","Thorough stayer with a career best at Navan (heavy); muted at Royal Ascot and anything firmer than good is not ideal.","✓ ✓ ✓ ? – ✓✓ ?","94","79 88 88 88 87 94"],
+["7","14","3-11592","Team Player","Greg Fairley","Ewan Whillans","9-4","10","99","112","Progressed well through the season; beaten a nose by Shrimp Shady at Newbury then second in the Shergar Cup race. In the mix at a 1lb higher mark.","✓ ✓ ✓ ? – ✓✓ ✓✓","94","78 78 83 92 92 92"],
+["8","12","/21003-","Manxman","James Doyle","S & E Crisford","9-3","18","67","111","Progressive 2023–25 and a Cesarewitch placer, but would have more to prove on good to firm; better with cut.","✓✓ ✓ ✓ ? – ✓✓ ?","93","86 90 91 95 95 94"],
+["9","7","447-101","In The Breeze","Colin Keane","Henrietta C Knight","9-3","22","100","105","Only his second try this far in a 31-race career; came from the rear to win by 5l ten weeks ago (soft). New horizons as a stayer — if the ground doesn't bite.","✓ ✓ ✓ ? – ✓✓ ?","93","83 83 82 81 88 87"],
+["10","11","88-0371","Boatswain","Callum Rodriguez","S & E Crisford","9-2","20","87","111","Best two runs this season on the AW, winning by 13l at Southwell on the step to 2m; 6lb higher and this is a very different contest.","✓✓ ✓ ✓ ? – ✓✓ ✓✓","92","93 91 90 88 88 86"],
+["11","1","0-07100","Westminster Moon","Robbie Colgan","A J Martin (IRE)","9-1","18","98","104","Ex-Polish/German; landed an Irish handicap gamble at the Curragh in May but never threatened at Royal Ascot and weakened. Something to prove.","✗ ✓ ? ? – ✓ ✗","91","93 88 86 84 92 92"],
+["12","3","4121612","Shrimp Shady","Rob Hornby","Andrew Balding","9-1","9","97","112","Won the 17-runner Chester Plate in May, beat Team Player at Newbury, then a fine Shergar Cup second at Ascot 11 days ago; 1lb rise won't stop another bold show.","✓ ✓ ✓ ? – ✓✓ ✓✓","91","77 79 82 87 87 90"],
+["13","6","02-7359","Kilmeaden","Clifford Lee","Faye Bramley","9-0","16","99","105","Promising third of 24 behind Westminster Moon in May and a fair fifth over 2m since; needs marked improvement in a first-time visor, tongue-tie off.","✓ ✓ ✓ ? – ✓✓ ✓","90","89 87 91 89 91 91"],
+["14","13","-124862","Ghaiyya","Rossa Ryan","Charlie Johnston","9-0","25","88","109","Ran with credit in basically all her handicaps this term, winning one in April; second of four at Ascot last time but the assessor may have her pegged.","✓ ✓ ✓ ? – ✓✓ ✓✓","90","84 89 92 – 91 90"],
+["15","2","30-4423","Fireblade","Kieran Shoemark","Dylan Cunha","8-13","20","103","109","Disappointed in this last year; a close third over C&D that September remains unmatched, though second of six at Ascot suggests the fire's not out. Needs extra.","✓ ✓ ✓ ✓ – ✓✓ ✓✓","89","90 90 90 90 88 90"],
+["16","17","442-363","Ride The Thunder","Ray Dawson","Roger Varian","8-13","9","99","111","On the premises in all six handicaps; sixth of 20 when favourite in the Northumberland Plate and on the heels of Shrimp Shady at Newbury. Reliable, needs a bit more.","✓✓ ✓ ✓ ✓ – ✓✓ ✓✓","89","84 84 84 88 90 89"],
+["17","8","8/43513","Mountain Road","Lauren Young(5)","Jim Goldie","8-12","12","92","107","Missed 2025; won at Thirsk (2m) in May and chased home the principals in the Shergar Cup race; 5lb claimer takes over in what looks a tougher race.","✓ ✓ ✓ ? – ✓✓ ✓✓","88","90 87 87 85 83 87"]
+]},
+{t:"4.45",n:"Irish Thoroughbred Marketing Handicap (Heritage)",m:"Class 2 · 5f · £51,540 · 19 run · RTV",draw:"Slight middle",pd:"Shes Got A Brother",rp:"Shes Got A Brother",nap:"Naana's Shadow",
+v:"<b>Naana's Shadow</b> chasing a fifth win of the season and can defy the mark; Zain Primus intriguing, Underwriter and Old Is Gold each-way angles.",
+tr:"Topdraw (5f, 20 races): low wins 53% (10), middle 55% (5), high 42% (5) — middle most reliable on the sprint course · Flat track suits strong gallopers racing handily.",
+r:[
+["1","15","6131191","Naana's Shadow","Oisin Murphy","Katie Scott","9-9","4","102","112","Prominent racer who has won competitive 5fs at Epsom, York and Glorious Goodwood; 8lb higher than last time but won so convincingly the mark may underestimate her.","✓ ✓ ✓ ✓ – ✓✓ ✓✓","102","72 77 78 85 – 94"],
+["2","14","3513-3","Poatan","David Egan","Amo Racing Ltd","9-6","10","99","105","2yo campaign ended with a good third in the Doncaster sales race; just one start this year. A sharp 5f may not be ideal but he holds a Group entry — interesting.","✓ ✓ ✓ ? – ✓ ?|G1","99",""],
+["3","18","115-700","Revival Power","Colin Keane","Tim Easterby","9-2","25","68","109","Won a C&D Listed at this meeting last August and followed up in the Group 2 Flying Childers; a long way below that this year but sits on a handy mark if reviving.","✓ ✓ ✓ ✓ – ✓ ✗","95","102"],
+["4","11","4100263","Baker Blue","Callum Rodriguez","Dylan Cunha","9-1","20","101","112","Front-runner, sixth of 18 to Naana's Shadow at Glorious Goodwood; back in a hotter race but this track should suit — each-way chance.","✓ ✓ ✓ ? ✓ ✓✓ ✓✓","94","87 87 96 94 95 94"],
+["5","9","2831265","Schrodinger's Cat","Oliver Stammers","Grant Tuer","9-1","15-2","102","111","Redcar winner in June, short-headed by Naana's Shadow over this C&D a week later, then not beaten far in big fields at Ascot and Goodwood. Each-way shout.","✓ ✓ ✓ ✓ ✓ ✓ ✓","94","80 82 82 90 95 95"],
+["6","13","14834","Manatee Mehmas","Daniel Tudhope","Ryan, Baker & Longden","8-13","7","103","110","Has run really well behind Naana's Shadow in both his handicaps, fourth of 18 at Goodwood; every chance he's in the mix in a first-time tongue-tie.","✓ ✓ ✓ ✓ ✓ ✓ ✓","92","94 93"],
+["7","1","618-160","Black Star Boy","Kieran Shoemark","Ed Walker","8-13","20","103","108","Won on reappearance at Sandown then denied a clear run over this C&D; Royal Ascot run best forgiven and the Sandown form has been strongly franked. Tongue-tie on.","✓ ✓ ✓ ? ✓ ✓ ?","92","88 – 93"],
+["8","11","-154273","Miss Yechance","Jack Nicholls(3)","K R Burke","8-11","8","103","111","Respectable seventh on stable debut in a 5f 3yo handicap at Goodwood three weeks ago; this track a good fit and she could make a bold bid.","✓✓ ✓ ✓ ? ✓ ✓ ✓","90","86 91 90"],
+["9","19","4-31102","Tricky Tel","Jason Hart","Hugo Palmer","8-11","16","92","110","Won two on the bounce at Hamilton and Chester; particularly effective at Chester so not certain to reproduce here, but not ruled out each-way.","✓ ✓ ✓ ? – ✓ ✓","89","81 79 79 84 90 89"],
+["10","2","311","Zain Primus","Ray Dawson","John Butler","8-9","8","–","105","Third on debut then won AW novices at Kempton and Newcastle; handicap debut after a break for an in-form yard — makes plenty of appeal as an unknown quantity.","✓✓ ? ✓ ? ✓ ✓ ?","88",""],
+["11","10","3401107","Stargazed","Warren Fentiman(3)","K R Burke","8-7","20","105","107","Second of 17 off this mark on reappearance over C&D in May; hasn't threatened since, though with excuses. First-time visor tries to spark a turnaround.","✓✓ ✓ ✓ ✓ ✓ ✓ ✗","86","86 89 90 88"],
+["12","4","12","One And Gone","Kieran O'Neill","Ian Williams","8-6","50","94","109","Front-runner who won two in a row early summer; folded at Glorious Goodwood and again at Pontefract on Sunday.","✓ ✓ ✓ ? ✓ ✓ ✓","85","78 78 77 83 86 85"],
+["13","12","1830-60","Old Is Gold","Saffie Osborne","Andrew Balding","8-5","10","99","104","Slowly away and unplaced both starts this season but was wrong in the market each time; first-time visor could sharpen him — watch the betting.","✓ ✓ ✓ ? ✓ ✗ ✗","84","87 88 87 86"],
+["14","5","114350","Shes Got A Brother","Joanna Mason","M & D Easterby","8-5","16","99","119","Won her first two at Ayr and placed in creditable Listed efforts; better than she showed at Goodwood without her hood, failing to settle. Hood back on today.","✓ ✓ ✓ ✓ ✓ ✓✓ ✓✓","84","82 82 – 87"],
+["15","3","89-8004","Underwriter","Luke Morris","Michael Keady","8-5","10","99","113","Was drifting until a close fourth at 100-1 at Ascot last month on his second stable start; would have been closer with a clear run. In the shake-up with breaks.","✗ ✓ ✓ ? ✓ ✓✓ ✓✓","84","91 90 88 84"],
+["16","8","2031535","Mighty Magnus","Cam Hardie","Michael Dods","8-4","33","103","111","Won at Musselburgh in June and did well for third at Newmarket after early trouble; disappointing latest and others are more compelling.","✓ ✓ ✓ ? ✓ ✓ ✓","83","82 81 81 86 85 85"],
+["17","16","213-152","Dolos Dream","Silvestre de Sousa","Ivan Furtado","8-2","16","103","114","Made all on handicap debut at Pontefract then went very close from a lesser mark on soft at Chester; up in grade but came well clear with the winner last time.","✓ ✓ ✓ ✓ – ✓✓ ✓✓","82","73 79 76"],
+["18","17","-900047","Boston Dan","Duran Fentiman","Tim Easterby","8-2","66","92","111","Listed runner-up here last October and well treated on that, but miles below that level in six runs this season. Major turnaround needed.","✓ ✓ ✓ ✓ – ✓ ✗","81","97 – 92 90 86 84"],
+["19","6","5217260","Call Margot","Connor Planas","Gemma Tutty","8-2","25","96","107","Highly capable on her day — went close in the 3yo Dash at Epsom — but a headstrong filly well beaten on both starts since. Something to prove.","✓ ✓ ✓ ? ✓ ✓ ✗","81","70 70 76 76 80 80"]
+]},
+{t:"5.20",n:"Sky Bet Nursery Handicap",m:"Class 2 · 6f · £51,540 · 22 run · RTV",draw:"Moderate low",pd:"Havana Sprite",rp:"Henley On Thames",nap:"Henley On Thames",
+v:"<b>Henley On Thames</b> the suggestion off his Hamilton win; Dubai Champion and Sovereign Glory ran well in a similar event, Havana Sprite and Crystal Queen the fillies to fear.",
+tr:"10yr: won LTO 6 winners from 56 · Highest winning weight 9-6 · Winning OR 73–95 · Topdraw (6f, 20 races): low wins 64% (10), middle 50% (6), high 36% (4) · Trainers here: Johnson Houghton, Palmer, Ryan and Hannon all have wins in this.",
+r:[
+["1","8","107","Ruler's Pride","James Doyle","K R Burke","9-9","8","87","96","550,000gns breeze-up buy who comfortably beat Crystal Queen on debut at Ayr; held in two subsequent Group assignments but carries plenty of potential into handicaps.","✓✓ ? ? ? – ✓ ✓","93",""],
+["2","5","42111","Havana Sprite","Hector Crouch","James Tate","9-8","8","82","97","Hasn't looked back since a green debut — dead-heated in a Newmarket Listed, completed the hat-trick on handicap debut over C&D 18 days ago. Was in Lowther consideration.","✓✓ ✓ ✓ ? ✓ ✓✓ ✓✓","92","88"],
+["3","22","210","Crystal Queen","Warren Fentiman(3)","R & P Fahey","9-5","20","95","97","Second to Ruler's Pride on debut, won Beverley's Hilary Needler ten days later, far from disgraced in a good Queen Mary. One to consider on nursery debut.","✓ ? ? ? ✗ ✓✓ ?|G2","89",""],
+["4","11","106","God Given Talent","Tom Marquand","William Haggas","9-5","12","85","98","Created a good impression winning at Newbury in May; well beaten in the Coventry but ran okay in a Newbury Listed since. Tongue-tied for stable/nursery debut.","✓ ✓ ✓ ? – ✓✓ ✓","89",""],
+["5","20","4312","Dubai Champion","Ryan Moore","Ben Haslam","9-3","4","90","98","Comfortable Hamilton winner, then perhaps unfortunate (drifted) when nailed close home on nursery debut at Glorious Goodwood. Up 4lb, Moore stays on — thereabouts.","✓ ✓ ✓ ? ✗ ✓✓ ✓✓|G2","87","83"],
+["6","14","200","Savage Mariner","Colin Keane","Hugo Palmer","9-3","25","87","93","Really encouraging Leicester debut under Keane but nowhere near that form in two runs since; hopes pinned on fresh blinkers, a gelding op and Keane returning.","✓ ? ✓ ? – ✓ ✗|G2","87",""],
+["7","4","5100","Persian Spring","Pat Dobbs","Richard Hannon","9-2","20","85","94","Stayed on well to win the C&D novice at the Dante meeting; no chance to show anything in the Norfolk, better than the bare result behind Dubai Champion at Goodwood.","✓ ✓ ✓ ✓ ✓ ✓ ✗|G2","86","88"],
+["8","16","3104","Sovereign Glory","Kieran Shoemark","Charles Hills","9-2","14","89","96","Bath novice winner who handled the step to 6f well when fourth of 18 in the Goodwood nursery (Dubai Champion second). Considered.","✓✓ ? ✓ ? ✗ ✓ ✓|G2","86","84"],
+["9","17","1050","Underdog","Saffie Osborne","Richard Spencer","9-1","33","78","98","Looked good winning a Sandown novice in June but safely held in better company since, including a 6f Listed. Handicap debut.","✓ ✓ ? ? ✗ ✓✓ ✓✓","85",""],
+["10","9","412","Jumeirah Storm","Neil Callan","William Knight","9-0","18","84","99","Doncaster novice winner who made a solid handicap debut when second there three weeks later; much more competitive here but only 3lb higher. Cheekpieces go on.","✗ ✓ ✓ ? – ✓✓ ✓✓","84","81"],
+["11","12","14","Peaceful Warrior","Jamie Spencer","Kevin Ryan","9-0","22","74","93","Made most to take a Yarmouth novice on debut, came up short in a useful Ascot event; gelded since and the least exposed runner on handicap debut.","✓ ✓ ✓ ? – ✓ ✗","84",""],
+["12","18","2915","Elevating","Joe Leavy","Richard Hannon","9-0","25","84","93","Shaped nicely when second over C&D on debut, coped well with the drop to 5f to win a Sandown maiden, solid fifth in a Newbury Listed on Friday.","✓ ✓ ✓ ✓ ✗ ✓ ✓|G1","84",""],
+["13","13","314","Towelontheterrace","Jason Hart","Jennie Candlish","8-13","33","86","94","Good-ground Chester novice winner but only fourth of seven under a penalty at Ripon; the opening mark looks punchy on that, though it's early days.","✓ ✓ ✓ ? – ✓ ✓","83",""],
+["14","2","4427","The Dancing Pirate","Oisin Murphy","Andrew Balding","8-13","6","92","96","Showed a good level early but only seventh when favourite at Goodwood, reportedly hanging; cheekpieces on to keep his mind on it, Murphy retains the ride.","✓ ✓ ✓ ? ✓ ✓ ✓","83","84"],
+["15","15","52331","Rlasthope","Ray Dawson","T Coyle & K Wood","8-10","25","85","92","Brocklesby fifth with improved, consistent form since, off the mark at Southwell four weeks ago; probably needs more on nursery debut but not inconceivable.","✓ ✓ ✓ ✓ – ✓ ✓","80",""],
+["16","6","6221","Henley On Thames","David Egan","K Philippart de Foy","8-9","8","96","104","Went close in two maidens before coming good upped in trip, making all at Hamilton 18 days ago; the opening mark looks quite tempting and he commands attention.","✗ ✓ ✓ ? ✓ ✓✓ ✓✓","79",""],
+["17","7","54156","Super Tuscan","Oliver Carmichael(7)","Eve Johnson Houghton","8-9","20","88","100","Chepstow novice winner in June; creditable sixth of 18 in the Goodwood nursery behind Dubai Champion and Sovereign Glory. Needs to better that, though.","✓ ? ✓ ? ✓ ✓✓ ✓✓","79","84 80"],
+["18","19","5723","Note To Self","Shane Foley","J & T Gosden","8-9","14","57","90","Just pegged back in a Windsor novice, beaten only a length at Yarmouth three weeks ago; the drop back to 6f suits but the opening mark demands a bigger effort.","✓✓ ? ✓ ? ✗ ✓ ✓","79",""],
+["19","3","350","Fantasy Force","Silvestre de Sousa","Adrian Paul Keatley","8-7","16","75","97","Fairly encouraging debut third here (5f) but downhill since, last of 14 over this trip on the AW latest; new cheekpieces to tap back into the early promise.","✓ ✓ ? ✓ ✓ ✓✓ ✗","77",""],
+["20","10","414","Bear Lee","Joanna Mason","M & D Easterby","8-6","25","82","101","Big step forward to win a Musselburgh maiden comfortably in June; similar form when fourth in a C&D novice last month. Not readily dismissed on handicap bow.","✓ ✓ ✓ ✓ – ✓✓ ✓✓","76",""],
+["21","1","658","Sue's Last Chance","Cam Hardie","R & P Fahey","8-5","125","78","98","All three starts on good ground over C&D — promising sixth behind Persian Spring on debut, built on it, then flopped; gelded since. Handicap debut.","✓ ✓ ✓ ✓ ✓ ✓✓ ✗","75",""],
+["22","21","0121","Brandenburg","Luke Morris","Ann Duffield","8-5","25","96","100","Beaten 18l in the Brocklesby, then dramatic improvement: 25-1 Beverley maiden win, a big-priced nursery second over C&D, and a Hamilton win six days later. Up 5lb, stable debut — worth a look.","✓ ✓ ✓ ✓ ✗ ✓✓ ✓✓","75","70 70"]
+]}
+];
+
+const TRAINERS=[
+["William Haggas","10-59","17%","-1.89"],
+["Andrew Balding","10-69","14%","-14.92"],
+["A P O'Brien","9-44","20%","-6.13"],
+["John & Thady Gosden","7-44","16%","-8.67"],
+["Ralph Beckett","7-48","15%","-5.25"],
+["Ed Walker","4-26","15%","+20.00"],
+["David O'Meara","4-50","8%","-21.00"],
+["John Butler","3-10","30%","+32.00"],
+["Richard Hannon","3-37","8%","-12.50"],
+["Kevin Ryan","3-70","4%","-29.00"],
+["John & Sean Quinn","2-4","50%","+41.00"],
+["Dylan Cunha","2-7","29%","+18.50"],
+["Eve Johnson Houghton","2-11","18%","+3.00"],
+["William Knight","2-13","15%","+15.00"]
+];
+
+const TRAVEL=[
+["Westminster Moon","Summerhill, Co Meath (A J Martin)"],
+["Confucius, Haffner, Antigua, Christmas Day + O'Brien team","Cashel, Co Tipperary"],
+["Erosandpsyche","Curragh, Co Kildare"],
+["Zaydann","France (F-H Graffard)"],
+["Mordor","Longwood, Co Meath (Gordon Elliott)"],
+["Small Fry","Co Kilkenny (J P O'Brien)"],
+["Pride Of Arras","Kimpton, Hants · 226 miles"],
+["Mountain Road","Uplawmoor, Lanarkshire · 220 miles"],
+["Gentle Hurricane + Balding team","Kingsclere, Hants · 216 miles"],
+["Naana's Shadow","Galashiels, Scottish Borders · 160 miles"],
+["Havana Sprite + Newmarket raiders","~158–159 miles"]
+];
+
+const nav=document.getElementById('nav'),main=document.getElementById('main');
+const longOdds=fc=>{const n=parseFloat(fc);return !fc.includes('-')&&n>=25};
+function seqNums(s){return s?s.split(' ').filter(x=>x!=='–').map(Number):[]}
+function trendArrow(seq,orr){
+  const n=seqNums(seq);if(n.length<2)return'';
+  const d=n[n.length-1]-n[0];
+  return `<i class="tr ${d>2?'up':d<-2?'dn':'fl'}">${d>2?'▲':d<-2?'▼':'▬'}</i>`;
+}
+function spark(seq){
+  const n=seqNums(seq);if(n.length<2)return'';
+  const min=Math.min(...n),max=Math.max(...n),rg=(max-min)||1;
+  const w=54,h=14,step=w/(n.length-1);
+  const pts=n.map((v,i)=>`${(i*step).toFixed(1)},${(h-2-((v-min)/rg)*(h-4)).toFixed(1)}`).join(' ');
+  return `<svg class="spk" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}"><polyline points="${pts}" fill="none" stroke="var(--gold)" stroke-width="1.3"/><circle cx="${((n.length-1)*step).toFixed(1)}" cy="${(h-2-((n[n.length-1]-min)/rg)*(h-4)).toFixed(1)}" r="1.8" fill="var(--gold)"/></svg>`;
+}
+// ---------- MODELS ----------
+const MODEL={}; // race index -> model key or null
+const WINNERS={}; // race index -> cloth number of marked winner
+let BW=null; // learned beta weights
+const tickVal={'✓✓':2,'✓':1,'?':0,'–':0,'-':0,'✗':-2};
+function tickScore(t){
+  if(!t)return 0;
+  return t.split('|')[0].split(' ').reduce((a,v)=>a+(tickVal[v]||0),0);
+}
+function normArr(vals){
+  const ok=vals.filter(v=>!isNaN(v));
+  const mn=Math.min(...ok),mx=Math.max(...ok),rg=(mx-mn)||1;
+  return vals.map(v=>isNaN(v)?0.35:(v-mn)/rg);
+}
+function components(rc){
+  const rs=rc.r;
+  return {
+    wrs:normArr(rs.map(r=>wr(rc,r))),
+    tss:normArr(rs.map(r=>num(r[8])<0?NaN:num(r[8]))),
+    tks:normArr(rs.map(r=>tickScore(r[11]))),
+    trs:normArr(rs.map(r=>{const d=tdelta(r[13]);return d===-999?NaN:d}))
+  };
+}
+function fitBeta(){
+  const marked=Object.entries(WINNERS).filter(([i,no])=>no);
+  if(!marked.length){BW=null;return null}
+  let best=[.45,.25,.2,.1],bestS=-1;
+  for(let a=0;a<=10;a++)for(let b=0;a+b<=10;b++)for(let c=0;a+b+c<=10;c++){
+    const d=10-a-b-c,w=[a/10,b/10,c/10,d/10];
+    let s=0;
+    for(const [ri,no] of marked){
+      const rc=RACES[+ri],cp=components(rc);
+      const sc=rc.r.map((r,j)=>cp.wrs[j]*w[0]+cp.tss[j]*w[1]+cp.tks[j]*w[2]+cp.trs[j]*w[3]);
+      const wi=rc.r.findIndex(r=>r[0]===no);
+      s+=1-(sc.filter(v=>v>sc[wi]).length)/Math.max(rc.r.length-1,1);
+    }
+    s/=marked.length;
+    if(s>bestS){bestS=s;best=w}
+  }
+  BW={w:best,score:bestS,n:marked.length};
+  return BW;
+}
+function modelScores(rc,key){
+  const rs=rc.r;
+  const {wrs,tss,tks,trs}=components(rc);
+  if(key==='power'){
+    return rs.map((r,i)=>Math.round((wrs[i]*.45+tss[i]*.25+tks[i]*.2+trs[i]*.1)*100));
+  }
+  if(key==='beta'){
+    const w=BW?BW.w:[.45,.25,.2,.1];
+    return rs.map((r,i)=>Math.round((wrs[i]*w[0]+tss[i]*w[1]+tks[i]*w[2]+trs[i]*w[3])*100));
+  }
+  if(key==='fit'){
+    return rs.map((r,i)=>Math.round((tks[i]*.7+trs[i]*.3)*100));
+  }
+  if(key==='ppo'){
+    const pow=rs.map((r,i)=>(wrs[i]*.45+tss[i]*.25+tks[i]*.2+trs[i]*.1)*100);
+    return rs.map((r,i)=>Math.round(pow[i]/(oddsVal(r[7])+1)*10)/10);
+  }
+  if(key==='value'){
+    const pow=rs.map((r,i)=>wrs[i]*.45+tss[i]*.25+tks[i]*.2+trs[i]*.1);
+    const ex=pow.map(p=>Math.exp(p*4));
+    const sum=ex.reduce((a,b)=>a+b,0);
+    const pm=ex.map(e=>e/sum);
+    const inv=rs.map(r=>1/(oddsVal(r[7])+1));
+    const isum=inv.reduce((a,b)=>a+b,0);
+    const pi=inv.map(v=>v/isum);
+    return pm.map((p,i)=>Math.round((p-pi[i])*100)); // edge in pts
+  }
+  return rs.map(()=>0);
+}
+function paintColor(t){ // t 0..1 red->green
+  return `hsl(${Math.round(t*120)},62%,44%)`;
+}
+function modelData(rc,key){
+  const sc=modelScores(rc,key);
+  const mn=Math.min(...sc),mx=Math.max(...sc),rg=(mx-mn)||1;
+  const map={};
+  rc.r.forEach((r,i)=>{
+    map[r[0]]={s:sc[i],c:paintColor((sc[i]-mn)/rg),
+      lbl:key==='value'?(sc[i]>0?'+':'')+sc[i]+' edge':key==='ppo'?'P/O '+sc[i]:key.toUpperCase()+' '+sc[i]};
+  });
+  return map;
+}
+function pdRow(t){
+  if(!t)return'';
+  const[ticks,grp]=t.split('|');
+  const lbl=['TrF','Gng','Dst','Crs','Drw','Abl','RcF'];
+  return ticks.split(' ').map((v,i)=>`<span class="pdc"><em>${lbl[i]}</em>${v}</span>`).join('')+(grp?`<span class="pdc grp">${grp}</span>`:'');
+}
+const oddsVal=fc=>{if(fc.includes('-')){const[a,b]=fc.split('-');return +a/+b}return +fc};
+function bfLine(rc){
+  const sorted=[...rc.r].sort((a,b)=>oddsVal(a[7])-oddsVal(b[7]));
+  const groups=[];
+  sorted.forEach(r=>{
+    const g=groups[groups.length-1];
+    if(g&&g.p===r[7])g.h.push(r[3]);
+    else groups.push({p:r[7],h:[r[3]]});
+  });
+  return groups.map(g=>`<i>${g.p}</i> <b>${g.h.join(', ')}</b>`).join(', ');
+}
+
+const SORTS=[['rank','Rank'],['card','Card'],['price','Price'],['rpr','RPR'],['wr','WR'],['ts','TS'],['or','OR'],['trend','Trend'],['draw','Draw'],['wt','Weight']];
+const wtLb=w=>{const[s,l]=w.split('-');return (+s)*14+(+l)};
+const claim=r=>{const m=r[4].match(/\((\d+)\)/);return m?+m[1]:0};
+const effLb=r=>wtLb(r[6])-claim(r);
+const num=v=>{const n=parseFloat(v);return isNaN(n)?-1:n};
+function wr(rc,r){
+  const rp=parseFloat(r[9]);if(isNaN(rp))return NaN;
+  const top=Math.max(...rc.r.map(x=>effLb(x)));
+  return rp+(top-effLb(r));
+}
+const tdelta=s=>{const n=(s||'').split(' ').filter(x=>x!=='–').map(Number);return n.length<2?-999:n[n.length-1]-n[0]};
+function rankMap(rc){
+  const sc=modelScores(rc,'power');
+  const byPow=[...rc.r.keys()].sort((a,b)=>sc[b]-sc[a]);
+  const byPrice=[...rc.r.keys()].sort((a,b)=>oddsVal(rc.r[a][7])-oddsVal(rc.r[b][7]));
+  const m={},det={};
+  rc.r.forEach((r,i)=>{
+    const p=byPow.indexOf(i)+1,q=byPrice.indexOf(i)+1;
+    m[r[0]]=p+q;det[r[0]]=`P${p}+M${q}=${p+q}`;
+  });
+  rc._rankdet=det;
+  return m;
+}
+function sortRunners(rc,key){
+  const a=[...rc.r];
+  if(key==='rank'){const rm=rankMap(rc);return a.sort((x,y)=>rm[x[0]]-rm[y[0]]||oddsVal(x[7])-oddsVal(y[7]))}
+  const f={
+    card:(x,y)=>+x[0]-+y[0],
+    price:(x,y)=>oddsVal(x[7])-oddsVal(y[7]),
+    rpr:(x,y)=>num(y[9])-num(x[9]),
+    ts:(x,y)=>num(y[8])-num(x[8]),
+    draw:(x,y)=>+x[1]-+y[1],
+    wt:(x,y)=>effLb(y)-effLb(x),
+    or:(x,y)=>num(y[12])-num(x[12]),
+    wr:(x,y)=>(isNaN(wr(rc,y))?-1:wr(rc,y))-(isNaN(wr(rc,x))?-1:wr(rc,x)),
+    trend:(x,y)=>tdelta(y[13])-tdelta(x[13])
+  }[key];
+  return a.sort(f);
+}
+function runnerHTML(rc,r,pm){
+  const p=pm?pm[r[0]]:null;
+  return `
+    <div class="runner${p?' painted':''}"${p?` style="--pc:${p.c}"`:''}>
+      <div class="rtop">
+        <div class="cloth${WINNERS[rc.i]===r[0]?' won':''}" data-no="${r[0]}"><span class="n">${r[0]}</span><span class="d">(${r[1]})</span></div>
+        <div>
+          <div class="hname">${r[3]}<span class="form">${r[2]}</span>
+            ${r[3]===rc.nap?'<span class="tag nap">NAP</span>':''}
+            ${r[3]===rc.rp?'<span class="tag rp">RPR</span>':''}
+            ${r[3]===rc.pd&&r[3]!==rc.rp?'<span class="tag pd">PD</span>':''}
+          </div>
+          <div class="jt">${r[4]} · ${r[5]}</div>
+          ${p?`<div class="mscore" style="--pc:${p.c};background:${p.c}">${p.lbl}</div>`:''}
+          <div class="figs">OR <b>${r[12]}</b>${trendArrow(r[13],r[12])} · TS <b>${r[8]}</b> · RPR <b>${r[9]}</b> · WR <b class="wr">${isNaN(wr(rc,r))?'–':wr(rc,r)}</b> ${spark(r[13])}</div>
+        </div>
+        <div class="right">
+          <div class="wt">${r[6]}${claim(r)?`<span class="claim">−${claim(r)}</span>`:''}${rc._rankdet?`<div class="rankdet">${rc._rankdet[r[0]]}</div>`:''}</div>
+          <div class="fc ${longOdds(r[7])?'long':''}">${r[7]}</div>
+        </div>
+      </div>
+      <div class="pdrow">${pdRow(r[11])}</div>
+      <div class="spot">${r[13]?`<div class="seq">Last 6 OR (latest right): <b>${r[13]}</b> → today <b>${r[12]}</b></div>`:''}${r[10]}</div>
+    </div>`;
+}
+const CURSORT={};
+function renderGrid(i,key){
+  CURSORT[i]=key;
+  if(key==='rank')rankMap(RACES[i]);else RACES[i]._rankdet=null;
+  const rc=RACES[i];
+  const mk=MODEL[i];
+  const pm=mk?modelData(rc,mk):null;
+  let rows=sortRunners(rc,key);
+  if(mk)rows=[...rows].sort((a,b)=>pm[b[0]].s-pm[a[0]].s);
+  document.getElementById('grid'+i).innerHTML=rows.map(r=>runnerHTML(rc,r,pm)).join('');
+  document.querySelectorAll(`#sort${i} button`).forEach(b=>b.classList.toggle('on',b.dataset.k===key&&!mk));
+  document.querySelectorAll(`#model${i} button`).forEach(b=>b.classList.toggle('on',b.dataset.m===(mk||'off')));
+}
+function setModel(i,m){
+  if(m==='beta')fitBeta();
+  MODEL[i]=m==='off'?null:m;
+  renderGrid(i,m==='off'?(CURSORT[i]||'rank'):CURSORT[i]||'rank');
+  const bi=document.getElementById('beta'+i);
+  if(m==='beta'){
+    bi.className='betainfo show';
+    bi.textContent=BW
+      ?`Beta fit to ${BW.n} winner${BW.n>1?'s':''} · weights WR ${BW.w[0]} TS ${BW.w[1]} Ticks ${BW.w[2]} Trend ${BW.w[3]} · winner percentile ${Math.round(BW.score*100)}%`
+      :'No winners marked yet — tap a horse\'s number cloth to mark the race winner, then tap Beta again.';
+  }else{bi.className='betainfo';bi.textContent=''}
+}
+RACES.forEach((rc,i)=>{
+  rc.i=i;
+  const b=document.createElement('button');
+  b.textContent=rc.t;b.onclick=()=>show(i);nav.appendChild(b);
+  const s=document.createElement('section');
+  s.className='race';
+  s.innerHTML=`
+  <div class="rhead">
+    <div class="rtime">${rc.t}</div>
+    <div class="rname">${rc.n}</div>
+    <div class="rmeta">${rc.m}</div>
+    <div class="chips">
+      <span class="chip">Nap <b>${rc.nap}</b></span>
+      <span class="chip">RP Rating <b>${rc.rp}</b></span>
+      <span class="chip">Postdata <b>${rc.pd}</b></span>
+      <span class="chip draw">Draw <b>${rc.draw}</b></span>
+    </div>
+    <div class="verdict">${rc.v}</div>
+    <details class="trends"><summary>Trends &amp; stats</summary><div class="tbody">${rc.tr}</div></details>
+  </div>
+  <div class="modelbar" id="model${i}" data-race="${i}"><span>Model</span>${[['off','Off'],['power','Power'],['fit','Fit'],['value','Value'],['ppo','P/O'],['beta','Beta']].map(m=>`<button data-m="${m[0]}">${m[1]}</button>`).join('')}</div>
+  <div class="betainfo" id="beta${i}"></div>
+  <div class="sortbar" id="sort${i}" data-race="${i}"><span>Sort</span>${SORTS.map(s=>`<button data-k="${s[0]}">${s[1]}</button>`).join('')}</div>
+  <div class="grid" id="grid${i}"></div>
+  <div class="bf"><span class="lbl">Betting forecast</span>${bfLine(rc)}</div>`;
+  main.appendChild(s);
+  renderGrid(i,'rank');
+});
+
+const ib=document.createElement('button');
+ib.textContent='COURSE';ib.onclick=()=>show(RACES.length);nav.appendChild(ib);
+const info=document.createElement('section');
+info.className='race';
+const MODELN={power:'Power',fit:'Fit',value:'Value',ppo:'P/O'};
+const TOPS=RACES.map(rc=>{
+  const o={};
+  for(const k of Object.keys(MODELN)){
+    const sc=modelScores(rc,k);
+    o[k]=rc.r.map((r,j)=>j).sort((a,b)=>sc[b]-sc[a]).slice(0,2);
+  }
+  return o;
+});
+function modelCard(k){
+  const rows=RACES.map((rc,ri)=>{
+    const sc=modelScores(rc,k);
+    return `<tr><td>${rc.t}</td><td>`+TOPS[ri][k].map((j,i)=>{
+      const r=rc.r[j];
+      return `${i?'<span style="color:var(--dim)"> · </span>':''}<b>${r[3]}</b> <span style="font-family:var(--mono);font-size:11px;color:var(--gold)">${r[7]} · ${sc[j]}</span>`;
+    }).join('')+`</td></tr>`;
+  }).join('');
+  return `<div class="card"><h2>${MODELN[k]} List · top two per race</h2><table>${rows}</table></div>`;
+}
+const consRows=RACES.map((rc,ri)=>{
+  const count={};
+  for(const k of Object.keys(MODELN)) for(const j of TOPS[ri][k]) count[j]=(count[j]||0)+1;
+  const order=Object.keys(count).map(Number).sort((a,b)=>count[b]-count[a]||a-b);
+  return `<tr><td>${rc.t}</td><td>`+order.map((j,i)=>{
+    const r=rc.r[j];
+    return `${i?'<span style=\"color:var(--dim)\"> · </span>':''}<b>${r[3]}</b> <span class="consb c${count[j]}">×${count[j]}</span>`;
+  }).join('')+`</td></tr>`;
+}).join('');
+info.innerHTML=`
+<div class="card">
+  <h2>Model Consensus</h2>
+  <p>Every horse making a model's top two, scored by appearances across the four lists (Power, Fit, Value, P/O). ×4 = every model has it.</p>
+  <table>${consRows}</table>
+</div>
+${modelCard('power')}${modelCard('fit')}${modelCard('value')}${modelCard('ppo')}
+
+<div class="card">
+  <h2>Draw · Sprint Course</h2>
+  <p>Left-handed. Low = inside (far side), high = stands side. Flat galloping track that suits horses racing handily; low can have an edge on the round course, high can benefit if the pace collapses. Middle has been the most reliable slot on the sprint course.</p>
+  <table>
+    <tr><th>Race</th><th>Dist</th><th>Low w%</th><th>Mid w%</th><th>High w%</th><th>Races</th></tr>
+    <tr><td>1.50</td><td class="num">5½f</td><td class="num pos">56 (5)</td><td class="num">47 (3)</td><td class="num">47 (1)</td><td class="num">9</td></tr>
+    <tr><td>4.45</td><td class="num">5f</td><td class="num">53 (10)</td><td class="num pos">55 (5)</td><td class="num">42 (5)</td><td class="num">20</td></tr>
+    <tr><td>5.20</td><td class="num">6f</td><td class="num pos">64 (10)</td><td class="num">50 (6)</td><td class="num">36 (4)</td><td class="num">20</td></tr>
+  </table>
+</div>
+<div class="card">
+  <h2>Ebor Top Trainers · Flat 2022+</h2>
+  <table>
+    <tr><th>Trainer</th><th>W-R</th><th>%</th><th>£1 stake</th></tr>
+    ${TRAINERS.map(t=>`<tr><td>${t[0]}</td><td class="num">${t[1]}</td><td class="num">${t[2]}</td><td class="num ${t[3][0]==='+'?'pos':'neg'}">${t[3]}</td></tr>`).join('')}
+  </table>
+</div>
+<div class="card">
+  <h2>Ebor Favourites · 2022+</h2>
+  <table>
+    <tr><th></th><th>Non-hcp</th><th>£1</th><th>Hcp</th><th>£1</th></tr>
+    <tr><td>2yo</td><td class="num">7-24 · 29%</td><td class="num neg">-5.09</td><td class="num">2-8 · 25%</td><td class="num pos">+0.83</td></tr>
+    <tr><td>3yo+</td><td class="num">13-32 · 41%</td><td class="num pos">+2.89</td><td class="num">11-48 · 23%</td><td class="num neg">-1.04</td></tr>
+    <tr><td>Total</td><td class="num">20-56 · 36%</td><td class="num neg">-2.20</td><td class="num">13-56 · 23%</td><td class="num neg">-0.21</td></tr>
+  </table>
+  <p style="margin-top:8px">Read: back non-handicap 3yo+ jollies here, treat handicap favourites with care.</p>
+</div>
+<div class="card">
+  <h2>Travellers' Check</h2>
+  <p>Longest journeys to the Knavesmire today — long trips are usually a statement of intent.</p>
+  <table>
+    ${TRAVEL.map(t=>`<tr><td>${t[0]}</td><td class="num" style="text-align:right;color:var(--dim)">${t[1]}</td></tr>`).join('')}
+  </table>
+</div>`;
+main.appendChild(info);
+
+main.addEventListener('click',e=>{
+  const sb=e.target.closest('.sortbar button');
+  if(sb){renderGrid(+sb.parentNode.dataset.race,sb.dataset.k);return}
+  const mb=e.target.closest('.modelbar button');
+  if(mb){setModel(+mb.parentNode.dataset.race,mb.dataset.m);return}
+  const cl=e.target.closest('.cloth');
+  if(cl){
+    const sec=cl.closest('section');
+    const i=[...main.children].indexOf(sec);
+    WINNERS[i]=WINNERS[i]===cl.dataset.no?null:cl.dataset.no;
+    if(MODEL[i]==='beta')fitBeta();
+    renderGrid(i,CURSORT[i]||'rank');
+    return;
+  }
+  const rt=e.target.closest('.rtop');
+  if(rt){rt.parentNode.classList.toggle('open')}
+});
+function show(i){
+  [...nav.children].forEach((b,j)=>b.classList.toggle('on',j===i));
+  [...main.children].forEach((s,j)=>s.classList.toggle('on',j===i));
+  window.scrollTo({top:0});
+}
+show(0);
+</script>
+</body>
+</html>
